@@ -30,4 +30,6 @@ RUN apt-get update \
     pkg-config \
     qt5-default \
     sqlite3 \
+    xvfb \
+    zip
     && apt-get clean
