@@ -42,4 +42,7 @@ RUN apt-get update \
     sqlite3 \
     xvfb \
     zip \
-    && apt-get clean
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+RUN name=gitlab-runner ; groupadd -g 1000 -r $name && useradd -r -m -s /bin/bash -u 1000 -g $name $name
+USER gitlab-runner
